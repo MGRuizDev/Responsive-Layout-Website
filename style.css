@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+body {
+  background: #dee3f2;
+  font: 14px/20px Arial, San-Serif;
+  color: #555;
+  margin: 0;
+}
+h1 {
+  text-align: center;
+  font-size: 180%;
+  line-height: 120%;
+  padding: 5% 0;
+}
+h2 {
+  text-decoration: underline;
+  line-height: 280%;
+  padding-left: 2%;
+}
+h3	{
+  line-height: 110%;
+  padding: 5% 0;
+}
+p {
+  padding: 1%;
+}
+img {
+  text-align: center;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+a {
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+/*--------------HEADER----------------*/
+/* position fixed won't stay on top, it will move. stay without any margin. z-index stay above the rest of the page. opacity make it traslucid (not percentage)*/
+header {
+  background: #1411db;
+  width: 100%;
+  height: 86px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  opacity: 0.80;
+}
+/* Logo has a little space from the margin. floating to the left. Background retrieve the image aligned and no repeat. */
+#logo {
+  margin: 20px;
+  float: left;
+  width: 200px;
+  height: 60px;
+  background: url(http://www.w3newbie.com/wp-content/uploads/the-gym.png) no-repeat center;
+}
+nav {
+  float: right;
+  padding: 35px 20px 20px 0;
+}
+/* Modified the icon image. Hidden, Only display when used in a small device or resize */
+#menu-icon {
+  display: hidden;
+  width: 40px;
+  height: 40px;
+  background: url(http://www.w3newbie.com/wp-content/uploads/icon.png) center;
+}
+a:hover#menu-icon {
+  border-radius: 4px 4px 0 0;
+}
+ul {
+  /*get rid of bulletpoints in all the ul's */
+  list-style: none
+}
+nav ul li{
+  /*This will aligned in a row instead of a column list*/
+  display: inline-block;
+  float: left;
+  /*Give them some space*/
+  padding: 10px;
+}
+.current {
+  color: #FFF;
+  text-decoration: underline;
+}
+/*---------------------SLIDER-----------------------*/
+/*Start styling the jquery image slider*/
+#doc {
+  margin: 40px 0;
+}
+#content {
+  /*Top/Bottom  Left/Right. Slider image 960px w 469px h.*/
+  margin: 0 auto;
+  max-width: 1140px;
+  margin-top: 110px;
+}
+.blueberry {
+  max-width: 960px;
+  margin-top: 110px;
+}
+/*Next. Retrive files for the Jquery image slider. Jquery file and css file. Blueberry Slider by Mark Tyrrell. Files were modified in order to fit this website. Just download them.*/
+
+    /*--------------------SECTION---------------------*/
+/*Next style the three columns after slider*/
+section {
+  /* the width to a % will modified the size of the element in the section to fit into columns.*/
+  width: 29%;
+  float: left;
+  margin: 2% 2%;
+  text-align: center;
+}
+.clear {
+  clear: both;
+}
+/*-------------------MIDDLE PART----------------------*/
+article {
+  float: left;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+  padding: 4%;
+}
+aside {
+  float: right;
+  margin: 0 auto;
+  width: 35%;
+  height: auto;
+  padding: 3%;
+}
+/*Modifying the schedules. The class must be together with the ul.*/
+ul.gym li {
+  padding-left: 3%;
+}
+/*------------------------------LAST PART------------------------------*/
+footer {
+  background: #333333;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0.90;
+}
+/*Lets style the text inside footer so it is not so dark. We are styling two elements at the same time so the , is very important*/
+footer p, footer h3 {
+  color: #FFF;
+}
+/* Styling the phone number.*/
+footer p a {
+  color: #FFF;
+  text-decoration: none;
+}
+/*Aligning the icons at the footer using the ul list with the class social to point at the li tags. The class needs to be next to the ul!*/
+ul.social li {
+  display: inline;
+}
+/*We can give them some space by modifying the image*/
+ul.social li img {
+  height: 50px;
+}
+footer.second {
+  /*Create an thin line signiling the border top of the last part of the footer*/
+  border-top: 1px solid #4D4ES0;
+  background-color: #333333;
+  max-height: 50px;
+  /*Do not have to reference p to align the text inside footer*/
+  text-align: center;
+  opacity: 0.95;
+}
+/*-------------------MEDIA QUERIES---------------------*/\
+/*if the viewport is 478 pixels wide do the next changes to the body(it could have change background or something else)*/
+@media screen and (max-width: 478PX) {
+  body {
+    position:  absolute;
+  }
+}
+/*The size of 740 is more like for a tablet. If viewport is 740 do the next*/
+@media screen and (max-width: 740PX) {
+  header {
+    position:  absolute;
+  }
+  #menu-icon {
+    display: inline-block;
+  }
+  nav ul, nav:active ul {
+    display: none;
+    position: absolute;
+    padding: 20px;
+    background: #405580;
+    border: 1px solid #FFF;
+    right: 20px;
+    top: 60px;
+    width: 50%;
+    border-radius: 2px 0 2px 2px;
+  }
+  nav li {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+  }
+  nav:hover ul {
+    display: block;
+  }
+  /*When fixing by including sections inside @media scope the dropdown menue was fixed. Note also when fixing the width size to 740 it was fixed*/
+  section {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  article {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  aside {
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
